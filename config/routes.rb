@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :article_categories
   resources :votes
   resources :categories
   resources :articles
