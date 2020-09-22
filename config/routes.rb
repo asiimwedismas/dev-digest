@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :votes
   resources :categories
   resources :articles
-  resources :users, only: %i[show]
+  resources :users, only: %i[new create show]
 
   get 'login' => 'users#index'
   post 'login' => 'users#authenticate_user'
