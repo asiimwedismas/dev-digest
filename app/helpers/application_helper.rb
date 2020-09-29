@@ -4,6 +4,10 @@ module ApplicationHelper
   end
 
   def current_user
-    User.find(1) if user_loggedin?
+    User.find(session[:current_user_id]) if user_loggedin?
+  end
+
+  def get_all_categories
+    @categories = Category.all
   end
 end
