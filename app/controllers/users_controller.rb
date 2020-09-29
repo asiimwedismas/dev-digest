@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def authenticate_user
-    @user = User.find_by(name: params[:name])
+    @user = User.find(params[:id])
 
     if @user.nil?
       flash[:notice] = 'This name is not registered'
@@ -46,8 +46,8 @@ class UsersController < ApplicationController
     else
       session[:current_user_id] = @user.id
       session[:current_username] = @user.name
-      flash[:notice] = 'User Logged in'
-      redirect_to user_path(@user)
+      # flash[:notice] = 'User Logged in'
+      redirect_to root_path
     end
   end
 
