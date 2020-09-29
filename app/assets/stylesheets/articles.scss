@@ -1,3 +1,45 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.single-article-image {
+  width: 1000px;
+}
+
+.single-article-title {
+  width: 800px;
+  color: #121212;
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: 2.5em;
+  margin-bottom: 16px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-content {
+  width: 800px;
+}
+
+.article-body {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 22px;
+  margin-bottom: 50px;
+}
+
+.votes-div {
+  border-radius: 0px 50px;
+  padding: 10px 20px;
+  position: fixed;
+  background-color: rgb(253, 96, 0);
+  right: 0px;
+  bottom: 70px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 14px;
+}
