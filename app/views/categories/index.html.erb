@@ -1,7 +1,6 @@
 <p id="notice" class="d-none"><%= notice %></p>
 
-<div class="">
-
+<% unless @most_popluar_article.nil?%>
   <div class="recycler">
     <span class="hr-left-border-red"></span>
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -15,7 +14,8 @@
       </div>
     </div>
   </div>
-</div>
+<%end%>
+
 
 
 <section class="categories-container flex-container">

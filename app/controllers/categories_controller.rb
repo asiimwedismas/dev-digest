@@ -5,8 +5,9 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
-    most_popular_artcile_id = Vote.vote_count.max_by { |_k, v| v }[0]
-    @most_popluar_article = Article.find(most_popular_artcile_id)
+    vote_hash = Vote.vote_count
+    most_popular_artcile_id = vote_hash.max_by { |_k, v| v }
+    @most_popluar_article = Article.find(most_popular_artcile_id[0]) unless most_popular_artcile_id.nil?
   end
 
   def show
