@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def active_link(link_path)
+    current_page?(link_path) ? 'active' : ''
+  end
+
   def user_loggedin?
     !session[:current_user_id].nil?
   end
