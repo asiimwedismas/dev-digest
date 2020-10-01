@@ -1,19 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div>
+  <h1 class="center single-article-title">
+    <%= @article.title %>
+  </h1>
+</div>
 
-<p>
-  <strong>Author:</strong>
-  <%= @article.author_id %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="single-article-image center">
+  <%= image_tag(@article.image.url, class:'img-fluid') %>
+</div>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+
+<div class="article-content center">
+  <p>
+    <strong>By:</strong>
+    <span class="article_author"><%= @article.author.name %></span>
+  </p>
+
+  <div class="article-vote">
+    <span class="article-published-date"><%= @article.created_at.strftime("%Y/%m/%d") %></span>
+    <%= vote_or_unvote_btn(@article) %>
+  </div>
+
+  <p class="article-body">
+    <%= @article.text %>
+  </p>
+</div>
+
+<div class="votes-div">
+  <span class="number-of-votes"><%= @article.votes.count%> Votes</span>
+</div>
