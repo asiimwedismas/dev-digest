@@ -1,5 +1,7 @@
 module ArticlesHelper
   def vote_or_unvote_btn(article)
+    return if session[:current_user_id].nil?
+
     vote = Vote.find_by(article: article, user: current_user)
     if vote
       link_to('Un-vote!', article_vote_path(id: vote.id, article_id: article.id), method: :delete, class: 'btn')

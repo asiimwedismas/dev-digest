@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
   include ApplicationHelper
+  before_action :authenticate, only: %i[create destroy]
 
   def create
     @vote = current_user.votes.new(article_id: params[:article_id])
@@ -20,5 +21,4 @@ class VotesController < ApplicationController
       redirect_to article_path(params[:article_id]), alert: 'You cannot unvote post that you did not vote before.'
     end
   end
-
 end

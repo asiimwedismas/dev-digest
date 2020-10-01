@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[show edit update destroy]
+  include ApplicationHelper
+  before_action :set_category, :authenticate, only: %i[show edit update destroy]
+  before_action :authenticate, only: %i[new create]
 
   def index
     @categories = Category.all

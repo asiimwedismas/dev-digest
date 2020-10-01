@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  include ApplicationHelper
+  before_action :authenticate, only: %i[new create]
+
   def show
     @article = Article.find(params[:id])
   end

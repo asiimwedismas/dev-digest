@@ -14,4 +14,8 @@ module ApplicationHelper
   def get_all_categories
     @categories = Category.all
   end
+
+  def authenticate
+    redirect_to login_path if session[:current_user_id].nil?
+  end
 end
