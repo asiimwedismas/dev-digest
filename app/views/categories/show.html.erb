@@ -1,14 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="grid-container my-col-2 category-article-container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<%
+  top = 0.0
 
-<p>
-  <strong>Priority:</strong>
-  <%= @category.priority %>
-</p>
+  @articles.each_with_index do |article, index|
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+  is_odd = (top.to_i.even?) ? '' : 'my-odd'
+  top = top + 0.5
+%>
+
+  <div class="article-wrapper flex-container <%= is_odd %>">
+      <div class="article-image" style="background-image: url(<%= article.image.url%>)"></div>
+      <div class="article-details">
+        <div class="details-wrapper my_odd">
+          <p class="category color-signature-orange"><%= @category.name %></p>
+          <p class="title"><%= article.title%></p>
+          <p class="peek"><%= truncate(article.text, length: 200, separator: ' ')%></p>
+          <p class="read-more color-signature-orange"><%= link_to 'Read More', article %></p>
+        </div>
+      </div>
+  </div>
+
+<%end%>
+</div>
