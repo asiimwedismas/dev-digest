@@ -1,24 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
 
-  # GET /users
-  # user selects name from list to login
   def index
     @users = User.all
   end
 
-  # GET /users/1
-  # show articles created by the user
-  def show; end
-
-  # GET /users/new
-  # show create or sign up a new user
   def new
     @user = User.new
   end
 
-  # POST /users
-  # save new user
   def create
     @user = User.new(user_params)
 
@@ -31,7 +21,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # logout current user
   def logout
     session.destroy
     redirect_to root_path
