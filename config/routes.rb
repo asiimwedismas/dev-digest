@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  root 'categories#index'
+
   resources :article_categories
-  resources :votes
-  resources :categories
-  resources :articles
   resources :users, only: %i[new create show]
+
+  resources :categories
+
+  resources :articles, only: %i[new create show] do
+    resources :votes, only: %i[create destroy]
+  end
 
   get 'login' => 'users#index'
   post 'login' => 'users#authenticate_user'
