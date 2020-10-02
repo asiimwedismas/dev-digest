@@ -12,14 +12,15 @@
 
 
 <div class="article-content center">
-  <p>
+  <p class="h5">
     <strong>By:</strong>
     <span class="article_author"><%= @article.author.name %></span>
   </p>
 
   <div class="article-vote">
-    <span class="article-published-date"><%= @article.created_at.strftime("%Y/%m/%d") %></span>
+    <span class="article-published-date h6">Published On: <%= @article.created_at.strftime("%Y/%m/%d") %></span>
     <%= vote_or_unvote_btn(@article) %>
+    <%= link_to_edit_article(@article) %>
   </div>
 
   <p class="article-body">
