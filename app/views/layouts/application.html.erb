@@ -42,7 +42,7 @@
           <%end%>
           <%= link_to current_user.name, user_path(current_user) %> | <%= link_to 'log out', logout_path %> 
         <% end %>        
-        <%= image_tag 'search-icon.png', class: 'search-icon' %>
+        <i class="material-icons search-icon">search</i>
       </div>
 
     </div>
@@ -52,7 +52,7 @@
 
   <footer class="container-fluid">
     <div class="flex-container">
-      <div class="leftie"><%= image_tag 'https://images.prismic.io/www-static/49aa0a09-06d2-4bba-ad20-4bcbe56ac507_logo.png?auto=compress,format' %></div>
+      <div class="leftie" style="logo-brand"><%= image_tag 'https://images.prismic.io/www-static/49aa0a09-06d2-4bba-ad20-4bcbe56ac507_logo.png?auto=compress,format' %></div>
 
       <div class="middle flex-container justify-content-center">
         <%= link_to 'Privacy Policy', url: 'www.microverse.org' %>
