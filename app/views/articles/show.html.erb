@@ -18,9 +18,11 @@
   </p>
 
   <div class="article-vote">
-    <span class="article-published-date h6">Published On: <%= @article.created_at.strftime("%Y/%m/%d") %></span>
-    <%= vote_or_unvote_btn(@article) %>
-    <%= link_to_edit_article(@article) %>
+    <p>
+      <span class="article-published-date h6">Published On: <%= @article.created_at.strftime("%Y/%m/%d") %></span>
+      <%= vote_or_unvote_btn(@article) %>
+      <%= link_to_edit_article(@article) %>
+    </P>
   </div>
 
   <p class="article-body">
