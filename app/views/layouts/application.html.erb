@@ -27,7 +27,9 @@
         <nav class="header-middle-nav">
           <ul class="flex-container justify-content-center">
             <% @categories.each do |category| %>
-            <li><%= link_to category.name, category_path(category), class: active_link(category_path(category)) %></li>
+              <li>
+                <%= link_to category.name, category_path(category), class: active_link(category_path(category)) %>
+              </li>
             <% end %>
           </ul>
         </nav>
@@ -40,13 +42,19 @@
           <%= link_to new_article_path, :class => 'orange_link' do %>
             <i class="material-icons">note_add</i>
           <%end%>
-          <%= link_to current_user.name, user_path(current_user) %> | <%= link_to 'log out', logout_path %> 
-        <% end %>        
+          <%= link_to current_user.name, user_path(current_user) %> | <%= link_to 'log out', logout_path %>
+        <% end %>
         <i class="material-icons">search</i>
       </div>
 
     </div>
   </header>
+
+  <span class="hr-left-border-red"></span>
+
+  <% unless notice.nil?%>
+    <p id="notice" class="alert alert-success"><%= notice %></p>
+  <%end%>
 
   <%= yield %>
 
