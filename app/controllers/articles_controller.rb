@@ -1,9 +1,23 @@
 class ArticlesController < ApplicationController
   include ApplicationHelper
-  before_action :authenticate, only: %i[new create]
+  before_action :set_article, only: %i[show edit update]
+  before_action :authenticate, only: %i[new edit update create]
 
-  def show
-    @article = Article.find(params[:id])
+  def show; end
+
+  def edit
+    @categories = Category.all
+  end
+
+  def update
+    respond_to do |format|
+      if @article.update(article_params)
+        @article.article_categories.update(category_id: params[:category_id])
+        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def new
@@ -16,8 +30,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        selected_category = Category.find(params[:category_id])
-        @article.article_categories.create(category: selected_category)
+        @article.article_categories.create(category_id: params[:category_id])
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
       else
         format.html { render :new }
@@ -26,6 +39,10 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
   def article_params
     params.require(:article).permit(:title, :text, :image)
