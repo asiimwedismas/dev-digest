@@ -43,3 +43,13 @@
   font-weight: 500;
   font-size: 14px;
 }
+
+.single-article-image {
+  text-align: center;
+  max-height: 500px;
+  margin-bottom: 20px;
+}
+
+.single-article-image > * {
+  max-height: inherit;
+}
