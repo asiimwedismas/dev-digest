@@ -12,7 +12,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    current_user = User.find(2)
     @article = current_user.articles.build(article_params)
 
     respond_to do |format|

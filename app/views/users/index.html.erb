@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>Login</h1>
 
 <table>
   <thead>
@@ -14,7 +14,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
-        <td><%= link_to 'login', {:controller => 'users', :action => 'authenticate_user', :id => user.id}, method: :post %></td>
+        <td><%= link_to 'login', {:controller => 'users', :action => 'authenticate_user', :id => user.id}, method: :post, class: 'orange_link' %></td>
       </tr>
     <% end %>
   </tbody>

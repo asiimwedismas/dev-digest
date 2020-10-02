@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     else
       session[:current_user_id] = @user.id
       session[:current_username] = @user.name
-      # flash[:notice] = 'User Logged in'
+      flash[:notice] = 'User Logged in'
       redirect_to root_path
     end
   end

@@ -6,6 +6,8 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
+  <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons', media: 'all', 'data-turbolinks-track': 'reload' %>
+
   <%= stylesheet_link_tag 'bootstrap.min', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'bootstrap.bundle.min', 'data-turbolinks-track': 'reload' %>
 
@@ -35,6 +37,9 @@
         <% if !user_loggedin? %>
           <%= link_to 'LOGIN', login_path %> | <%= link_to 'REGISTER', signup_path %>
         <% else %>
+          <%= link_to new_article_path, :class => 'orange_link' do %>
+            <i class="material-icons">note_add</i>
+          <%end%>
           <%= link_to current_user.name, user_path(current_user) %> | <%= link_to 'log out', logout_path %> 
         <% end %>        
         <%= image_tag 'search-icon.png', class: 'search-icon' %>
