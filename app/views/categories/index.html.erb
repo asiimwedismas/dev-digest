@@ -6,7 +6,7 @@
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="<%= asset_path(@most_popluar_article.image)%>" class="w-100 img-fluid d-block" alt="...">
+          <img src="<%= @most_popluar_article.image%>" class="w-100 img-fluid d-block" alt="...">
           <div class="carousel-caption d-none d-md-block color-signature-orange">
             <h5><%= @most_popluar_article.title %></h5>
           </div>
@@ -22,7 +22,7 @@
   <% @categories.each do |category| %>
     <% latest_category_article = latest_article(category)%>
     <%if !latest_category_article.nil? %>
-    <div class="category-card" style="background-image: url(<%= latest_category_article.image.url%>)">
+    <div class="category-card" style="background-image: url(<%= latest_category_article.image%>)">
       <div class="card-wrapper">
         <div class="category-name"><%= link_to category.name, category_path(category.id) %></div> 
         <div class="category-latest-article-title"><%= latest_category_article.title%></div>
