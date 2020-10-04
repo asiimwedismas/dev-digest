@@ -2,16 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// .categories-container {
-//   display: flex;
-// }
-
-.weather {
-  background-image: image-url("weather.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .category-card,
 .article-image {
   position: relative;
@@ -28,7 +18,6 @@
   height: 100%;
   padding: 20px;
   width: 100%;
-
   background-color: rgba(0, 0, 0, 0.322);
 }
 
@@ -49,13 +38,9 @@
   font-weight: bold;
 }
 
-.weather {
-  height: 100%;
-}
-
 .main-75 {
   grid-template-columns: 75% 25%;
-  grid-auto-rows: minmax(450px 450px);
+  grid-auto-rows: minmax(450px, 450px);
 }
 
 .recycler .img-fluid {
@@ -64,11 +49,6 @@
 
 .recycler {
   flex-basis: 75%;
-}
-
-.weather {
-  background-color: blue;
-  flex-basis: 25%;
 }
 
 .hr-left-border-red {
@@ -87,12 +67,10 @@
 }
 
 .category-article-container {
-  // border: 4px solid blue;
   width: 100%;
 }
 
 .article-wrapper {
-  // border: 2px solid red;
   height: 400px;
 }
 
@@ -122,9 +100,6 @@
 
 .title {
   font-weight: bolder;
-}
-
-.peek {
 }
 
 .read-more:hover {

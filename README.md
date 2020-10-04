@@ -24,3 +24,6 @@ Things you may want to cover:
 - ...
 
 https://murmuring-retreat-00624.herokuapp.com/
+
+- sample articles from:
+  https://enterprisersproject.com/

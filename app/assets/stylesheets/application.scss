@@ -23,7 +23,6 @@ body {
 }
 
 ul {
-  // background-color: aqua;
   list-style-type: none;
   padding: 0;
   margin: 16px;
@@ -38,8 +37,41 @@ footer {
   color: white;
 }
 
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none !important;
+}
+
 footer a {
   color: rgb(253, 96, 0);
+}
+
+header a {
+  color: rgb(148, 145, 141);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.header-middle-nav a {
+  text-decoration: none;
+  display: block;
+  padding: 0 10px;
+  text-align: center;
+}
+
+a:hover {
+  color: rgb(253, 96, 0) !important;
+}
+
+.social-ul a {
+  background-image: image-url("social.png");
+  background-repeat: no-repeat;
+  margin: 0 2px;
+  border-radius: 38px;
+  display: block;
+  border: 2px solid transparent;
+  width: 38px;
+  height: 38px;
 }
 
 footer .middle a {
@@ -63,45 +95,12 @@ footer .middle a {
   justify-content: center;
 }
 
-.header-middle-nav a {
-  text-decoration: none;
-  display: block;
-  padding: 0 10px;
-  text-align: center;
-}
-
 .header-middle-nav a.active {
   color: rgb(253, 96, 0);
 }
 
-a {
-  color: rgb(255, 255, 255);
-  text-decoration: none !important;
-}
-
-header a {
-  color: rgb(148, 145, 141);
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-a:hover {
-  color: rgb(253, 96, 0) !important;
-}
-
 .search-icon {
   margin-left: 16px;
-}
-
-.social-ul a {
-  background-image: image-url("social.png");
-  background-repeat: no-repeat;
-  margin: 0 2px;
-  border-radius: 38px;
-  display: block;
-  border: 2px solid transparent;
-  width: 38px;
-  height: 38px;
 }
 
 .social-ul a:hover {
@@ -111,9 +110,11 @@ a:hover {
 .social-ul a.tw {
   background-position: 4.2% center;
 }
+
 .social-ul a.is {
   background-position: 45.5% center;
 }
+
 .social-ul a.fb {
   background-position: 86.8% center;
 }

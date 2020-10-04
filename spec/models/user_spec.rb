@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'name must be unique' do
-      user1 = User.new(name: 'dismas').save
+      User.new(name: 'dismas').save
       user2 = User.new(name: 'dismas').save
       expect(user2).to eq(false)
     end

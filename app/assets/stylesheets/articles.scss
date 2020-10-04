@@ -4,6 +4,9 @@
 
 .single-article-image {
   width: 1000px;
+  text-align: center;
+  max-height: 500px;
+  margin-bottom: 20px;
 }
 
 .single-article-title {
@@ -24,29 +27,22 @@
 }
 
 .article-body {
-  margin-bottom: 15px;
   color: #333;
   font-size: 22px;
   margin-bottom: 50px;
 }
 
 .votes-div {
-  border-radius: 0px 50px;
+  border-radius: 0 50px;
   padding: 10px 20px;
   position: fixed;
   background-color: rgb(253, 96, 0);
-  right: 0px;
+  right: 0;
   bottom: 70px;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   font-weight: 500;
   font-size: 14px;
-}
-
-.single-article-image {
-  text-align: center;
-  max-height: 500px;
-  margin-bottom: 20px;
 }
 
 .single-article-image > * {
