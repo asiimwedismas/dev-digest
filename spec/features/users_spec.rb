@@ -18,7 +18,7 @@ RSpec.feature 'Users', type: :feature do
       within('form') do
         fill_in 'Name', with: 'dismas_test_name'
       end
-      click_button 'Create User'
+      click_button 'Sign up'
       expect(page).to have_content 'User was successfully created.'
     end
   end
