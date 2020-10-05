@@ -7,8 +7,6 @@ For my rails capstone project, I created a website app for developer related art
 ![screenshot](app/assets/images/screenshot-1.png)
 ![screenshot](app/assets/images/screenshot-2.jpg)
 
-Additional description about the project and its features.
-
 ## Built With
 
 - Ruby v2.6.5
@@ -21,7 +19,7 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow the next steps.
 
 ### Prerequisites
 
@@ -87,8 +85,6 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
