@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'categories#index'
 
-  resources :article_categories
   resources :users, only: %i[new create show]
 
   resources :categories
