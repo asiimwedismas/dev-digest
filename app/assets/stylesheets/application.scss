@@ -64,6 +64,7 @@ a:hover {
 }
 
 .social-ul a {
+  /* stylelint-disable-next-line */
   background-image: image-url("social.png");
   background-repeat: no-repeat;
   margin: 0 2px;
