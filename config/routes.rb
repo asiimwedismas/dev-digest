@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create show]
 
-  resources :categories
+  resources :categories, only: %i[index show new create]
 
   resources :articles, only: %i[new edit update create show] do
     resources :votes, only: %i[create destroy]
