@@ -5,9 +5,7 @@ class ArticlesController < ApplicationController
 
   def show; end
 
-  def edit
-    @categories = Category.all
-  end
+  def edit; end
 
   def update
     respond_to do |format|
@@ -22,7 +20,6 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    @categories = Category.all
   end
 
   def create

@@ -19,7 +19,7 @@
   <div class="form-group">
     <%= form.label :category_id, 'Select Article category' %>
       <select name="category_id" class="form-control">
-        <%= @categories.each do |categories| %>
+        <%= Category.all.each do |categories| %>
           <option value="<%= categories.id %>"><%= categories.name %></option>
         <% end %>
       </select>
