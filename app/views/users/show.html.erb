@@ -1,4 +1,22 @@
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<div class="container-fluid">
+<h3 class="single-article-title h3">Here are your published articles</h3>
+<div class=" my-col-2 category-article-container">
+<% @articles.each_with_index do |article, index| %>
+
+  <div class="article-wrapper flex-container" style="margin-bottom:20px">
+      <div class="article-image col-4" style="background-image: url(<%= article.image%>)"></div>
+      <div class="article-details">
+        <div class="details-wrapper my_odd">
+          <p class="category color-signature-orange"><%= article.categories[0].name %></p>
+          <p class="title"><%= article.title%></p>
+          <p class="peek"><%= truncate(article.text, length: 800, separator: ' ')%></p>
+          <p class="read-more color-signature-orange"><%= link_to 'Read More', article %></p>
+        </div>
+      </div>
+  </div>
+
+  <hr>
+
+<%end%>
+</div>
+</div>
