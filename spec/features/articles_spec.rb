@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+# rubocop:disable Metrics/BlockLength
 RSpec.feature 'Articles', type: :feature do
   describe 'Article manipulation' do
     before :each do
@@ -47,3 +47,4 @@ RSpec.feature 'Articles', type: :feature do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
