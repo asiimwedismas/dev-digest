@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate, only: %i[new create]
 
   def index
-    @categories = Category.all
+    @categories = Category.all.includes(:articles)
     vote_hash = Vote.vote_count
     most_popular_artcile_id = vote_hash.max_by { |_k, v| v }
     @most_popluar_article = Article.find(most_popular_artcile_id[0]) unless most_popular_artcile_id.nil?
