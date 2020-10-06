@@ -36,14 +36,7 @@
       </div>
 
       <div class="rightie">
-        <% if !user_loggedin? %>
-          <%= link_to 'LOGIN', login_path %> | <%= link_to 'REGISTER', signup_path %>
-        <% else %>
-          <%= link_to new_article_path, :class => 'orange_link' do %>
-            <i class="material-icons">note_add</i>
-          <%end%>
-          <%= link_to current_user.name, user_path(current_user) %> | <%= link_to 'log out', logout_path %>
-        <% end %>
+        <%= login_links%>
         <i class="material-icons">search</i>
       </div>
 
