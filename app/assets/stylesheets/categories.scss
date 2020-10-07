@@ -43,11 +43,8 @@
   grid-auto-rows: minmax(450px, 450px);
 }
 
-.recycler .img-fluid {
-  height: 50% !important;
-}
-
 .recycler {
+  height: 100% !important;
   flex-basis: 75%;
 }
 
@@ -111,4 +108,29 @@
 .read-more a,
 .orange_link {
   color: rgb(249, 155, 0) !important;
+}
+
+.weather {
+  /* stylelint-disable-next-line */
+  background-image: image-url("weather.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  flex-basis: 25%;
+}
+
+.popular-container {
+  flex-basis: 75%;
+}
+
+.top-row {
+  height: 450px;
+}
+
+.popular-image,
+.recycler,
+#carouselExampleCaptions,
+.carousel-inner,
+.carousel-item.active {
+  height: 450px;
 }

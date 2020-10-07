@@ -1,19 +1,26 @@
 
-
-<% unless @most_popluar_article.nil?%>
-  <div class="recycler">
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="<%= @most_popluar_article.image%>" class="w-100 img-fluid d-block" alt="...">
-          <div class="carousel-caption d-none d-md-block color-signature-orange">
-            <h5><%= link_to @most_popluar_article.title, article_path(@most_popluar_article) %></h5>
+<div class="flex-container top-row">
+  <div class="popular-container">
+    <% unless @most_popluar_article.nil?%>
+      <div class="recycler">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="<%= @most_popluar_article.image%>" class="w-100 img-fluid d-block popular-image" alt="...">
+              <div class="carousel-caption d-none d-md-block color-signature-orange">
+                <h5><%= link_to @most_popluar_article.title, article_path(@most_popluar_article) %></h5>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <%end%>
   </div>
-<%end%>
+
+  <div class="weather"></div>
+
+</div>
+
 
 
 
