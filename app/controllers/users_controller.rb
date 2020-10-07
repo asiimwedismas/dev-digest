@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   include ApplicationHelper
+  include SessionsHelper
 
   def new
     @user = User.new
@@ -13,12 +14,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to login_path, notice: 'User was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @user.save
+      find_user(@user)
+    else
+      render :new
     end
   end
 
