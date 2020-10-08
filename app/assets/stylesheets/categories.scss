@@ -1,0 +1,136 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.category-card,
+.article-image {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 1 1 25%;
+  min-height: 300px;
+}
+
+.card-wrapper {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  padding: 20px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.322);
+}
+
+.category-name,
+.category {
+  padding: 0 3px;
+  display: inline-block;
+  border-bottom: 3px solid rgb(254, 254, 0);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.category-latest-article-title {
+  position: absolute;
+  bottom: 20px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.main-75 {
+  grid-template-columns: 75% 25%;
+  grid-auto-rows: minmax(450px, 450px);
+}
+
+.recycler {
+  height: 100% !important;
+  flex-basis: 75%;
+}
+
+.hr-left-border-red {
+  background-color: rgb(78, 68, 62);
+  display: block;
+  height: 8px;
+  border-left: 250px solid red;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.my-col-2 {
+  grid-template-columns: 50% 50%;
+}
+
+.category-article-container {
+  width: 100%;
+}
+
+.article-wrapper {
+  height: 400px;
+}
+
+.article-image {
+  height: 100%;
+  flex-basis: 50%;
+}
+
+.article-details {
+  height: 100%;
+  flex-basis: 50%;
+}
+
+.my-odd {
+  flex-flow: row-reverse;
+}
+
+.details-wrapper > * {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.category {
+  margin-top: 20px;
+  border-color: rgb(249, 155, 0);
+}
+
+.title {
+  font-weight: bolder;
+}
+
+.read-more:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.color-signature-orange,
+.read-more a,
+.orange_link {
+  color: rgb(249, 155, 0) !important;
+}
+
+.weather {
+  /* stylelint-disable-next-line */
+  background-image: image-url("weather.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  flex-basis: 25%;
+}
+
+.popular-container {
+  flex-basis: 75%;
+}
+
+.top-row {
+  height: 450px;
+}
+
+.popular-image,
+.recycler,
+#carouselExampleCaptions,
+.carousel-inner,
+.carousel-item.active {
+  height: 450px;
+}

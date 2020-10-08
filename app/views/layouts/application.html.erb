@@ -1,15 +1,82 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DevDigest</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>DevDigest</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <%= stylesheet_link_tag 'bootstrap.min', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'bootstrap.bundle.min', 'data-turbolinks-track': 'reload' %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+</head>
+
+<body>
+  <% all_categories %>
+  <header class="container-fluid">
+    <div class="flex-container">
+      <div class="leftie"><%= link_to (image_tag 'logo-top.png'), root_path %></div>
+
+      <div class="middle">
+        <nav class="header-middle-nav">
+          <ul class="flex-container justify-content-center">
+            <% @categories.each do |category| %>
+              <li>
+                <%= link_to category.name, category_path(category), class: active_link(category_path(category)) %>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="rightie">
+        <%= login_links%>
+        <i class="material-icons">search</i>
+      </div>
+
+    </div>
+  </header>
+
+  <span class="hr-left-border-red"></span>
+
+  <% unless notice.nil?%>
+    <p id="notice" class="alert alert-success"><%= notice %></p>
+  <%end%>
+
+  <%= yield %>
+
+  <footer class="container-fluid">
+    <div class="flex-container">
+      <div class="leftie" style="logo-brand"><%= image_tag 'logo-bottom.png' %></div>
+
+      <div class="middle flex-container justify-content-center">
+        <%= link_to 'Privacy Policy', url: 'www.microverse.org' %>
+        <%= link_to 'Terms & Conditions', url: 'www.microverse.org' %>
+        <span>Copyright 2014. All rights reserved</span>
+      </div>
+
+      <div class="rightie flex-container">
+
+        <span>Connect with us:</span>
+
+        <nav class="social">
+          <ul class="social-ul flex-container">
+            <li><a title="facebook" href="www.microverse.org" class="fb"></a></li>
+            <li><a title="twitter" href="www.microverse.org" class="tw"></a></li>
+            <li><a title="instagram" href="www.microverse.org" class="is"></a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+    </div>
+  </footer>
+</body>
+
 </html>
